@@ -3,80 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste HTML Simples</title>
+    <title>Incoart Ladrilhos | Em breve</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2c5f95 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
         }
         .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        h1 {
-            color: #2c3e50;
+            max-width: 850px;
+            background: rgba(255,255,255,0.97);
+            color: #1e3a5f;
+            border-radius: 20px;
+            padding: 60px 40px;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.25);
             text-align: center;
         }
+        .logo {
+            width: 260px;
+            height: 260px;
+            margin: 0 auto 35px;
+            border-radius: 50%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            display: block;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 12px;
+            color: #1e3a5f;
+        }
+        .slogan {
+            font-size: 1.45rem;
+            color: #2c5f95;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
         p {
-            line-height: 1.6;
+            font-size: 1.25rem;
+            line-height: 1.75;
+            max-width: 680px;
+            margin: 0 auto 40px;
+        }
+        .info {
+            background: #f8f9fa;
+            padding: 28px;
+            border-radius: 12px;
+            margin: 40px auto;
+            max-width: 520px;
+            color: #333;
+        }
+        .info p {
+            margin: 8px 0;
+        }
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            justify-content: center;
+            margin: 45px 0 30px;
         }
         button {
-            padding: 12px 25px;
-            font-size: 16px;
-            background-color: #3498db;
-            color: white;
+            padding: 16px 38px;
+            font-size: 1.15rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 50px;
             cursor: pointer;
-            margin-top: 20px;
+            transition: all 0.3s ease;
+            min-width: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .btn-instagram {
+            background-color: #E1306C;
+            color: white;
+        }
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
         }
         button:hover {
-            background-color: #2980b9;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
         }
-        .resultado {
+        .redes {
             margin-top: 20px;
-            padding: 15px;
-            background-color: #ecf0f1;
-            border-radius: 5px;
-            min-height: 50px;
+            font-size: 1.1rem;
+            color: #555;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>✅ Teste HTML Simples</h1>
+        <!-- Logo - caminho corrigido para a pasta src -->
+        <img src="src/logo-incoart.png" 
+             alt="Incoart Ladrilhos" 
+             class="logo">
+
+        <h1>Estamos chegando em breve!</h1>
+        <p class="slogan">A arte em fazer ladrilhos</p>
         
-        <p>Este é um arquivo HTML básico criado para testes. Ele inclui:</p>
-        <ul>
-            <li>Estrutura completa (DOCTYPE, head, body)</li>
-            <li>Meta tags responsivas</li>
-            <li>CSS embutido com estilo moderno</li>
-            <li>Interatividade com JavaScript</li>
-        </ul>
+        <p>
+            A <strong>Incoart Ladrilhos Hidráulicos</strong> está preparando um novo espaço para você.<br>
+            Aqui você encontrará nossos lindos ladrilhos hidráulicos artesanais, pisos para calçadas, 
+            cobogós, piso podotátil e diversos artefatos de cimento com qualidade premium.
+        </p>
 
-        <button onclick="testar()">Clique aqui para testar</button>
+        <div class="info">
+            <p><strong>📍 Endereço</strong></p>
+            <p>Av. Maria Augusta Fagundes Gomes, 145</p>
+            <p>Jacareí/SP</p>
+        </div>
 
-        <div class="resultado" id="resultado">
-            Clique no botão acima para ver a mensagem...
+        <p><strong>Fale Conosco</strong></p>
+
+        <div class="buttons">
+            <button class="btn-instagram" onclick="window.open('https://www.instagram.com/incoart2025/', '_blank')">
+                👉 Acompanhe no Instagram
+            </button>
+            
+            <button class="btn-whatsapp" onclick="window.open('https://wa.me/551239524244', '_blank')">
+                💬 Falar no WhatsApp
+            </button>
+        </div>
+
+        <div class="redes">
+            <p>Em breve mais novidades e nosso catálogo completo</p>
         </div>
     </div>
-
-    <script>
-        function testar() {
-            const resultado = document.getElementById('resultado');
-            resultado.innerHTML = `
-                <strong>🎉 Teste realizado com sucesso!</strong><br>
-                Data e hora atual: ${new Date().toLocaleString('pt-BR')}
-            `;
-            resultado.style.backgroundColor = '#d5f4e6';
-        }
-    </script>
 </body>
 </html>
