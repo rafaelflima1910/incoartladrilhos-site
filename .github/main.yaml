@@ -1,0 +1,24 @@
+name: Deploy para Locaweb via FTP
+
+on:
+  push:
+    branches:
+      - main  
+  workflow_dispatch:  
+
+jobs:
+  deploy:
+    name: Deploy FTP - Locaweb
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4 
+      - name: Deploy via FTP (Locaweb)
+        uses: locaweb/ftp-deploy@1.0.0
+        with:
+          host: ${{ secrets.FTP_SERVER }}
+          user: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          remoteDir: public_html
+          
