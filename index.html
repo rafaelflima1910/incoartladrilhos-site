@@ -1,146 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Incoart Ladrilhos | Em breve</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: linear-gradient(135deg, #1e3a5f 0%, #2c5f95 100%);
-            color: #fff;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        .container {
-            max-width: 850px;
-            background: rgba(255,255,255,0.97);
-            color: #1e3a5f;
-            border-radius: 20px;
-            padding: 60px 40px;
-            box-shadow: 0 15px 45px rgba(0,0,0,0.25);
-            text-align: center;
-        }
-        .logo {
-            width: 260px;
-            height: 260px;
-            margin: 0 auto 35px;
-            border-radius: 50%;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            display: block;
-        }
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 12px;
-            color: #1e3a5f;
-        }
-        .slogan {
-            font-size: 1.45rem;
-            color: #2c5f95;
-            margin-bottom: 40px;
-            font-weight: 500;
-        }
-        p {
-            font-size: 1.25rem;
-            line-height: 1.75;
-            max-width: 680px;
-            margin: 0 auto 40px;
-        }
-        .info {
-            background: #f8f9fa;
-            padding: 28px;
-            border-radius: 12px;
-            margin: 40px auto;
-            max-width: 520px;
-            color: #333;
-        }
-        .info p {
-            margin: 8px 0;
-        }
-        .buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 22px;
-            justify-content: center;
-            margin: 45px 0 30px;
-        }
-        button {
-            padding: 16px 38px;
-            font-size: 1.15rem;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            min-width: 240px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-        .btn-instagram {
-            background-color: #E1306C;
-            color: white;
-        }
-        .btn-whatsapp {
-            background-color: #25D366;
-            color: white;
-        }
-        button:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-        }
-        .redes {
-            margin-top: 20px;
-            font-size: 1.1rem;
-            color: #555;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Incoart Ladrilhos Hidráulicos - Ladrilhos artesanais, cobogós, pisos para calçadas e artefatos de cimento com qualidade premium." />
+  
+  <title>Incoart Ladrilhos | A arte em fazer ladrilhos</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Open+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="src/styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <div class="container">
-        <!-- Logo - caminho corrigido para a pasta src -->
-        <img src="src/logo-incoart.png" 
-             alt="Incoart Ladrilhos" 
-             class="logo">
 
-        <h1>Estamos chegando em breve!</h1>
-        <p class="slogan">A arte em fazer ladrilhos</p>
-        
-        <p>
-            A <strong>Incoart Ladrilhos Hidráulicos</strong> está preparando um novo espaço para você.<br>
-            Aqui você encontrará nossos lindos ladrilhos hidráulicos artesanais, pisos para calçadas, 
-            cobogós, piso podotátil e diversos artefatos de cimento com qualidade premium.
-        </p>
+  <!-- HEADER -->
+  <header class="navbar">
+    <div class="container navbar-container">
+      <a href="index.html" class="navbar-logo">
+        <img src="src/images/logo-incoart.png" alt="Incoart Ladrilhos" class="logo-img">
+      </a>
 
-        <div class="info">
-            <p><strong>📍 Endereço</strong></p>
-            <p>Av. Maria Augusta Fagundes Gomes, 145</p>
-            <p>Jacareí/SP</p>
-        </div>
+      <nav class="navbar-menu">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="produtos.html">Produtos</a></li>   <!-- Link corrigido com .html -->
+          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#contato">Contato</a></li>
+        </ul>
+      </nav>
 
-        <p><strong>Fale Conosco</strong></p>
+      <a href="index.html#contato" class="btn-cta">Solicitar Orçamento</a>
 
-        <div class="buttons">
-            <button class="btn-instagram" onclick="window.open('https://www.instagram.com/incoart2025/', '_blank')">
-                👉 Acompanhe no Instagram
-            </button>
-            
-            <button class="btn-whatsapp" onclick="window.open('https://wa.me/551239524244', '_blank')">
-                💬 Falar no WhatsApp
-            </button>
-        </div>
-
-        <div class="redes">
-            <p>Em breve mais novidades e nosso catálogo completo</p>
-        </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
     </div>
+
+    <!-- Menu Mobile -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="produtos.html">Produtos</a></li>
+        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <h1>Incoart Ladrilhos</h1>
+      <p class="tagline">A arte em fazer ladrilhos</p>
+      <p class="hero-desc">Ladrilhos hidráulicos artesanais, cobogós, pisos para calçadas e artefatos de cimento com qualidade premium.</p>
+      <a href="index.html#contato" class="btn-primary">Solicitar Orçamento</a>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section class="section sobre" id="sobre">
+    <div class="container">
+      <h2>Sobre a Incoart</h2>
+      <p>A Incoart Ladrilhos Hidráulicos nasceu com o propósito de unir tradição artesanal à qualidade moderna. Produzimos ladrilhos hidráulicos, cobogós, pisos para calçadas, piso podotátil e diversos artefatos de cimento com acabamento premium.</p>
+      <p>Localizada em Jacareí/SP, valorizamos cada detalhe para entregar peças que transformam ambientes com beleza, durabilidade e personalidade.</p>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section class="section contato" id="contato">
+    <div class="container">
+      <h2>Fale Conosco</h2>
+      <p class="contato-endereco">
+        <strong>Endereço:</strong> Av. Maria Augusta Fagundes Gomes, 145 — Jacareí/SP
+      </p>
+
+      <form id="contactForm">
+        <div class="form-grid">
+          <input type="text" placeholder="Nome completo" required>
+          <input type="tel" id="celular" name="celular" placeholder="(11) 99999-9999" required>
+          <input type="email" placeholder="E-mail" required>
+          <textarea placeholder="Mensagem ou pedido de orçamento" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Enviar Mensagem</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="currentYear"></span> Incoart Ladrilhos Hidráulicos. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+
+  <script src="src/javascript/script.js"></script>
+  <!-- Botão WhatsApp Flutuante -->
+<a href="https://wa.me/551239524244" target="_blank" class="whatsapp-float" aria-label="Falar no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
 </body>
 </html>

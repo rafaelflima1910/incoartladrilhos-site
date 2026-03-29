@@ -1,0 +1,395 @@
+/* ============================================= */
+/* INCOART LADRILHOS - style.css (Rodapé estilo Validus QA) */
+/* ============================================= */
+
+:root {
+    --vermelho: #C73A3A;
+    --vermelho-escuro: #A22F2F;
+    --preto: #1C1C1C;
+    --cinza: #6F6F6F;
+    --bege: #E8E3DC;
+    --branco: #FFFFFF;
+    --sombra-neon: 0 0 15px rgba(199, 58, 58, 0.35);
+    --sombra-card: 0 8px 25px rgba(0, 0, 0, 0.08);
+  }
+  
+  /* Reset & Base */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background: var(--bege);
+    color: var(--preto);
+    line-height: 1.7;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  h1, h2, h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--preto);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* ============================================= */
+  /* NAVBAR */
+  /* ============================================= */
+  .navbar {
+    background: #FFFFFF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.07);
+    padding: 18px 0;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar-logo img {
+    height: 72px;
+    width: auto;
+  }
+  
+  .navbar-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-items: center;
+  }
+  
+  .navbar-menu a {
+    color: var(--preto);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.08rem;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar-menu a:hover,
+  .navbar-menu a.active {
+    color: var(--vermelho);
+  }
+  
+  .btn-cta {
+    background: var(--vermelho);
+    color: white;
+    padding: 13px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.05rem;
+    box-shadow: var(--sombra-neon);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-cta:hover {
+    background: var(--vermelho-escuro);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(199, 58, 58, 0.5);
+  }
+  
+  /* Hamburger */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+  }
+  
+  .hamburger span {
+    width: 32px;
+    height: 3.5px;
+    background: var(--preto);
+    transition: all 0.4s ease;
+  }
+  
+  /* Mobile Menu */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 88px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 30px 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+  
+  .mobile-menu.active {
+    display: block;
+  }
+  
+  .mobile-menu ul {
+    list-style: none;
+  }
+  
+  .mobile-menu a {
+    display: block;
+    padding: 16px 0;
+    color: var(--preto);
+    text-decoration: none;
+    font-size: 1.25rem;
+  }
+  
+  /* ============================================= */
+  /* HERO */
+  /* ============================================= */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(28,28,28,0.78), rgba(28,28,28,0.65)), 
+                url('../images/hero-bg.jpg') center/cover no-repeat fixed;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    flex: 1 0 auto;
+  }
+  
+  .hero-content {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 12px;
+    color: white;
+    text-shadow: 0 4px 25px rgba(0,0,0,0.7);
+  }
+  
+  .hero .tagline {
+    font-size: 1.65rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+  }
+  
+  .hero .hero-desc {
+    font-size: 1.25rem;
+    max-width: 680px;
+    margin: 0 auto 40px;
+    opacity: 0.9;
+  }
+  
+  /* ============================================= */
+  /* SEÇÕES GERAIS */
+  /* ============================================= */
+  .section {
+    padding: 110px 0;
+    flex: 1 0 auto;
+  }
+  
+  .section h2 {
+    font-size: 3.1rem;
+    text-align: center;
+    margin-bottom: 70px;
+    color: var(--preto);
+  }
+  
+  .sobre p {
+    font-size: 1.15rem;
+    max-width: 780px;
+    margin: 0 auto 25px;
+    text-align: center;
+  }
+  
+  /* Contato */
+  .contato {
+    background: var(--preto);
+    color: white;
+  }
+  
+  .contato h2 {
+    color: white;
+  }
+  
+  .contato-endereco {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.15rem;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 22px;
+    margin-bottom: 35px;
+  }
+  
+  .form-grid input,
+  .form-grid textarea {
+    width: 100%;
+    padding: 16px 18px;
+    border: 2px solid #555;
+    border-radius: 8px;
+    background: #2A2A2A;
+    color: white;
+    font-size: 1.05rem;
+  }
+  
+  .form-grid input:focus,
+  .form-grid textarea:focus {
+    border-color: var(--vermelho);
+    outline: none;
+  }
+  
+  /* ============================================= */
+  /* RODAPÉ - Estilo Validus QA Adaptado para Incoart */
+  /* ============================================= */
+  .footer {
+    background: var(--preto);
+    color: #aaa;
+    padding: 50px 0 35px;
+    margin-top: auto;
+    text-align: center;
+  }
+  
+  .footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .footer-left {
+    text-align: left;
+  }
+  
+  .footer-left .logo-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 6px;
+  }
+  
+  .footer-left .logo-highlight {
+    color: var(--vermelho);
+  }
+  
+  .footer-left p {
+    font-size: 0.95rem;
+    color: #bbb;
+  }
+  
+  .footer-center {
+    display: flex;
+    gap: 35px;
+  }
+  
+  .footer-center a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .footer-center a:hover {
+    color: var(--vermelho);
+  }
+  
+  .footer-right {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  .footer-right a {
+    color: #ccc;
+    font-size: 1.8rem;
+    transition: color 0.3s;
+  }
+  
+  .footer-right a:hover {
+    color: var(--vermelho);
+  }
+  
+  .footer-bottom {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #333;
+    padding-top: 20px;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  
+  /* ============================================= */
+  /* BOTÃO WHATSAPP FLUTUANTE */
+  /* ============================================= */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #25D366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+    z-index: 9999;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+  }
+  
+  /* Responsivo */
+  @media (max-width: 992px) {
+    .navbar-menu {
+      display: none;
+    }
+    .hamburger {
+      display: flex;
+    }
+    .hero h1 {
+      font-size: 3.4rem;
+    }
+    .footer .container {
+      flex-direction: column;
+      gap: 25px;
+      text-align: center;
+    }
+    .footer-center {
+      gap: 25px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .section {
+      padding: 80px 0;
+    }
+    .whatsapp-float {
+      bottom: 20px;
+      right: 20px;
+      width: 55px;
+      height: 55px;
+      font-size: 24px;
+    }
+  }

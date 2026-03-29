@@ -1,0 +1,19 @@
+# =============================================
+# .htaccess - Incoart Ladrilhos (Clean URL)
+# =============================================
+
+RewriteEngine On
+
+# Remove .html da URL (Clean URLs)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.html [L]
+
+# Segurança básica
+ServerSignature Off
+Options -Indexes
+
+# Bloqueio de arquivos sensíveis
+<FilesMatch "\.(env|ini|log|sql|bak|old|inc|git|yml|yaml)$">
+    Require all denied
+</FilesMatch>
