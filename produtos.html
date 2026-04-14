@@ -3,143 +3,204 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Conheça todos os produtos da Incoart Ladrilhos: Ladrilho Hidráulico, Cobogó, Piso para Calçada e Piso Podotátil." />
-  
-  <title>Produtos - Incoart Ladrilhos</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Open+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
-  
+  <meta name="description" content="Produtos INCOART: ladrilhos hidráulicos (tartaruga, onda, personalizado), cobogó, pezão de cimento, pisos e referência de tintas." />
+  <title>Produtos — INCOART Ladrilhos</title>
+  <link rel="icon" href="src/images/favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="src/styles/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="navbar">
     <div class="container navbar-container">
       <a href="index.html" class="navbar-logo">
-        <img src="src/images/logo-incoart.png" alt="Incoart Ladrilhos" class="logo-img">
+        <img src="src/images/logo-incoart.png" alt="INCOART Ladrilhos" class="logo-img" width="180" height="72" />
       </a>
 
-      <nav class="navbar-menu">
+      <nav class="navbar-menu" aria-label="Principal">
         <ul>
           <li><a href="index.html">Início</a></li>
+          <li><a href="index.html#institucional">Institucional</a></li>
+          <li><a href="index.html#instalacao">Instalação</a></li>
           <li><a href="produtos.html" class="active">Produtos</a></li>
-          <li><a href="index.html#sobre">Sobre</a></li>
+          <li><a href="index.html#onde-encontrar">Onde encontrar</a></li>
           <li><a href="index.html#contato">Contato</a></li>
         </ul>
       </nav>
 
-      <a href="index.html#contato" class="btn-cta">Solicitar Orçamento</a>
+      <a href="https://wa.me/551239524244" class="btn-cta" target="_blank" rel="noopener noreferrer">Solicitar orçamento</a>
 
-      <div class="hamburger" id="hamburger">
+      <button type="button" class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
         <span></span><span></span><span></span>
-      </div>
+      </button>
     </div>
 
     <div class="mobile-menu" id="mobileMenu">
       <ul>
         <li><a href="index.html">Início</a></li>
+        <li><a href="index.html#institucional">Institucional</a></li>
+        <li><a href="index.html#instalacao">Instalação</a></li>
         <li><a href="produtos.html">Produtos</a></li>
-        <li><a href="index.html#sobre">Sobre</a></li>
+        <li><a href="index.html#onde-encontrar">Onde encontrar</a></li>
         <li><a href="index.html#contato">Contato</a></li>
+        <li><a href="https://wa.me/551239524244" class="mobile-whatsapp-cta" target="_blank" rel="noopener noreferrer">Solicitar orçamento</a></li>
       </ul>
     </div>
   </header>
 
-  <!-- PRODUTOS PAGE -->
   <section class="produtos-page">
     <div class="container">
       <div class="page-header">
-        <h1>Nossos Produtos</h1>
-        <p class="page-subtitle">Ladrilhos hidráulicos artesanais e artefatos de cimento com qualidade premium</p>
+        <h1>Produtos</h1>
+        <p class="page-subtitle">Ladrilhos hidráulicos artesanais, cobogós e linha de pisos em cimento — com fotos reais da nossa produção.</p>
       </div>
 
       <div class="produtos-content">
-        <!-- Filtro Lateral -->
-        <aside class="filtro-lateral">
-          <h3>Refinar a Busca</h3>
-          
+        <aside class="filtro-lateral" aria-label="Filtro de produtos">
+          <h3>Navegação</h3>
           <div class="filtro-grupo">
-            <h4>Categoria</h4>
-            <ul>
-              <li><a href="#">Ladrilho Hidráulico</a></li>
-              <li><a href="#">Cobogó</a></li>
-              <li><a href="#">Piso para Calçada</a></li>
-              <li><a href="#">Piso Podotátil</a></li>
+            <h4>Filtro</h4>
+            <ul class="filtro-lista">
+              <li class="filtro-lista__grupo">Ladrilhos</li>
+              <li><a href="#ladrilho">Clássico — padrões variados</a></li>
+              <li><a href="#ladrilho-tartaruga">Modelo tartaruga</a></li>
+              <li><a href="#ladrilho-onda">Onda 20×20 cm</a></li>
+              <li><a href="#ladrilho-personalizado">Personalizado</a></li>
+              <li class="filtro-lista__grupo">Outros</li>
+              <li><a href="#cobogo">Cobogó</a></li>
+              <li><a href="#pezao-cimento">Pezão de cimento</a></li>
+              <li><a href="#pisos-cimento">Calçada e podotátil</a></li>
             </ul>
           </div>
-
           <div class="filtro-grupo">
-            <h4>Uso</h4>
+            <h4>Referências</h4>
             <ul>
-              <li><a href="#">Interno</a></li>
-              <li><a href="#">Externo</a></li>
-              <li><a href="#">Acessibilidade</a></li>
+              <li><a href="#ref-tintas">Tintas e cores</a></li>
+              <li><a href="index.html#onde-encontrar">Onde encontrar</a></li>
             </ul>
           </div>
         </aside>
 
-        <!-- Grid de Produtos -->
         <div class="produtos-grid">
-          <div class="produto-card">
+          <article class="produto-card geo-reveal" id="ladrilho">
             <div class="produto-imagem">
-              <img src="src/images/produtos/ladrilho-hidraulico.jpg" alt="Ladrilho Hidráulico">
+              <img src="src/images/produtos/ladrilhos_hidraulicos.webp" alt="Ladrilhos hidráulicos INCOART" width="400" height="220" loading="lazy" />
             </div>
             <div class="produto-info">
-              <h3>Ladrilho Hidráulico</h3>
-              <p>Peças artesanais com padrões geométricos exclusivos. Ideal para pisos internos e externos.</p>
-              <a href="#" class="btn-saiba-mais">Ver detalhes →</a>
+              <h3>Ladrilho hidráulico</h3>
+              <p>Peças artesanais para pisos e paredes. Indicado para áreas internas e externas cobertas, conforme especificação do projeto e selagem adequada.</p>
+              <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Ladrilho%20hidr%C3%A1ulico%20%28linha%20cl%C3%A1ssica%20%2F%20padr%C3%B5es%20variados%29." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </div>
-          </div>
+          </article>
 
-          <div class="produto-card">
+          <article class="produto-card geo-reveal" id="ladrilho-tartaruga">
             <div class="produto-imagem">
-              <img src="src/images/produtos/cobogo.jpg" alt="Cobogó">
+              <img src="src/images/produtos/ladrilhos_hidráulicos_modelo_tartaruga.webp" alt="Ladrilho hidráulico modelo tartaruga INCOART" width="400" height="220" loading="lazy" />
+            </div>
+            <div class="produto-info">
+              <h3>Modelo tartaruga</h3>
+              <p>Padrão geométrico clássico com forte presença visual — ideal para salas, cozinhas e áreas de convivência.</p>
+              <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Ladrilho%20hidr%C3%A1ulico%20modelo%20tartaruga." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
+            </div>
+          </article>
+
+          <article class="produto-card geo-reveal" id="ladrilho-onda">
+            <div class="produto-imagem">
+              <img src="src/images/produtos/Ladrilho_Onda_20x20.webp" alt="Ladrilho hidráulico onda 20x20 INCOART" width="400" height="220" loading="lazy" />
+            </div>
+            <div class="produto-info">
+              <h3>Ladrilho onda 20×20 cm</h3>
+              <p>Padrão em onda no formato 20×20 cm — forte identidade visual para pisos e áreas sociais.</p>
+              <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Ladrilho%20hidr%C3%A1ulico%20onda%2020x20%20cm." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
+            </div>
+          </article>
+
+          <article class="produto-card geo-reveal" id="ladrilho-personalizado">
+            <div class="produto-imagem">
+              <img src="src/images/produtos/Ladrilho_hidraulico_personalizado.webp" alt="Ladrilho hidráulico personalizado INCOART" width="400" height="220" loading="lazy" />
+            </div>
+            <div class="produto-info">
+              <h3>Ladrilho personalizado</h3>
+              <p>Desenvolvimento de desenho e paleta alinhados ao seu projeto, mantendo o processo artesanal e a resistência do cimento.</p>
+              <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Ladrilho%20hidr%C3%A1ulico%20personalizado." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
+            </div>
+          </article>
+
+          <article class="produto-card geo-reveal" id="cobogo">
+            <div class="produto-imagem">
+              <img src="src/images/produtos/cobogó.webp" alt="Cobogó INCOART" width="400" height="220" loading="lazy" />
             </div>
             <div class="produto-info">
               <h3>Cobogó</h3>
-              <p>Elementos vazados para ventilação natural e decoração moderna.</p>
-              <a href="#" class="btn-saiba-mais">Ver detalhes →</a>
+              <p>Elementos vazados para ventilação, luz natural e composições de fachada ou divisórias internas.</p>
+              <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Cobog%C3%B3." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </div>
-          </div>
+          </article>
 
-          <div class="produto-card">
+          <article class="produto-card geo-reveal" id="pezao-cimento">
             <div class="produto-imagem">
-              <img src="src/images/produtos/piso-calçada.jpg" alt="Piso para Calçada">
+              <img src="src/images/produtos/Pezao_de_Cimento.webp" alt="Pezão de cimento INCOART" width="400" height="220" loading="lazy" />
             </div>
             <div class="produto-info">
-              <h3>Piso para Calçada</h3>
-              <p>Soluções resistentes e com design sofisticado para áreas externas.</p>
-              <a href="#" class="btn-saiba-mais">Ver detalhes →</a>
+              <h3>Pezão de cimento</h3>
+              <p>Peça maciça de cimento para apoio estrutural, bases e aplicações que exigem massa e estabilidade.</p>
+              <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Pez%C3%A3o%20de%20cimento." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </div>
-          </div>
+          </article>
 
-          <div class="produto-card">
-            <div class="produto-imagem">
-              <img src="src/images/produtos/piso-podotatil.jpg" alt="Piso Podotátil">
-            </div>
+          <article class="produto-card geo-reveal" id="pisos-cimento">
+            <div class="produto-imagem produto-imagem--c" role="img" aria-label="Linha de pisos em cimento"></div>
             <div class="produto-info">
-              <h3>Piso Podotátil</h3>
-              <p>Produtos para acessibilidade com alta qualidade e segurança.</p>
-              <a href="#" class="btn-saiba-mais">Ver detalhes →</a>
+              <h3>Piso para calçada e podotátil</h3>
+              <p>Soluções em cimento para circulação externa, calçadas e projetos com exigências de acessibilidade (alerta e direcional). Consulte modelos disponíveis e prazos com a equipe.</p>
+              <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Piso%20para%20cal%C3%A7ada%20e%2Fou%20piso%20podot%C3%A1til." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </div>
-          </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="produtos-ref geo-reveal" id="ref-tintas">
+        <h2>Tintas e acabamento</h2>
+        <p>Na Incoart você encontra <strong>tinta de demarcação viária</strong> com alta cobertura, secagem rápida e resistência ao tempo e ao tráfego — ideal para pátios, estacionamentos, calçadas, fábricas e áreas externas, com sinalização nítida e mais segurança.</p>
+        <p class="produtos-ref__sub"><strong>Cores disponíveis:</strong> a paleta completa aparece na publicação abaixo (mesma imagem do Instagram). Para orientações sobre aplicação e uso da tinta, veja também <a href="https://www.instagram.com/p/DQUXrwLEZXy/" target="_blank" rel="noopener noreferrer">esta publicação sobre tinta e aplicação</a>.</p>
+        <div class="tintas-embed-wrap">
+          <iframe title="Instagram INCOART — cores da tinta de demarcação" src="https://www.instagram.com/p/DQeWgb5kY-S/embed" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
     </div>
   </section>
 
   <footer class="footer">
-    <div class="container">
-      <p>© <span id="currentYear"></span> Incoart Ladrilhos Hidráulicos. Todos os direitos reservados.</p>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="footer-brand"><span class="logo-highlight">INCO</span>ART</p>
+        <p class="footer-tagline">Ladrilhos hidráulicos e artefatos de cimento</p>
+      </div>
+      <nav class="footer-center" aria-label="Rodapé">
+        <a href="index.html#institucional">Institucional</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="index.html#onde-encontrar">Onde encontrar</a>
+        <a href="index.html#contato">Contato</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/incoart2025/" target="_blank" rel="noopener noreferrer" aria-label="Instagram INCOART">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/551239524244" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp INCOART">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="currentYear"></span> INCOART — Especialista em <strong>ladrilho hidráulico</strong> e <strong>artefatos de cimento</strong>.</p>
     </div>
   </footer>
 
+  <a href="https://wa.me/551239524244" target="_blank" class="whatsapp-float" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
   <script src="src/javascript/script.js"></script>
-    <!-- Botão WhatsApp Flutuante -->
-<a href="https://wa.me/551239524244" target="_blank" class="whatsapp-float" aria-label="Falar no WhatsApp">
-  <i class="fab fa-whatsapp"></i>
-</a>
 </body>
 </html>

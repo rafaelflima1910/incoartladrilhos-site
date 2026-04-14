@@ -3,101 +3,260 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Incoart Ladrilhos Hidráulicos - Ladrilhos artesanais, cobogós, pisos para calçadas e artefatos de cimento com qualidade premium." />
-  
-  <title>Incoart Ladrilhos | A arte em fazer ladrilhos</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&amp;family=Open+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
-  
+  <meta name="description" content="INCOART — Ladrilhos hidráulicos artesanais, cobogós, pisos e artefatos de cimento. Precisão, estética e acabamento premium. Jacareí/SP." />
+  <title>INCOART | Ladrilhos Hidráulicos e Artefatos de Cimento</title>
+  <link rel="icon" href="src/images/favicon.svg" type="image/svg+xml" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="src/styles/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="navbar">
     <div class="container navbar-container">
       <a href="index.html" class="navbar-logo">
-        <img src="src/images/logo-incoart.png" alt="Incoart Ladrilhos" class="logo-img">
+        <img src="src/images/logo-incoart.png" alt="INCOART Ladrilhos" class="logo-img" width="180" height="72" />
       </a>
 
-      <nav class="navbar-menu">
+      <nav class="navbar-menu" aria-label="Principal">
         <ul>
           <li><a href="index.html">Início</a></li>
-          <li><a href="produtos.html">Produtos</a></li>   <!-- Link corrigido com .html -->
-          <li><a href="index.html#sobre">Sobre</a></li>
-          <li><a href="index.html#contato">Contato</a></li>
+          <li><a href="#institucional">Institucional</a></li>
+          <li><a href="#instalacao">Instalação</a></li>
+          <li><a href="produtos.html">Produtos</a></li>
+          <li><a href="#onde-encontrar">Onde encontrar</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
 
-      <a href="index.html#contato" class="btn-cta">Solicitar Orçamento</a>
+      <a href="https://wa.me/551239524244" class="btn-cta" target="_blank" rel="noopener noreferrer">Solicitar orçamento</a>
 
-      <div class="hamburger" id="hamburger">
+      <button type="button" class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false">
         <span></span><span></span><span></span>
-      </div>
+      </button>
     </div>
 
-    <!-- Menu Mobile -->
     <div class="mobile-menu" id="mobileMenu">
       <ul>
         <li><a href="index.html">Início</a></li>
+        <li><a href="#institucional">Institucional</a></li>
+        <li><a href="#instalacao">Instalação</a></li>
         <li><a href="produtos.html">Produtos</a></li>
-        <li><a href="index.html#sobre">Sobre</a></li>
-        <li><a href="index.html#contato">Contato</a></li>
+        <li><a href="#onde-encontrar">Onde encontrar</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="https://wa.me/551239524244" class="mobile-whatsapp-cta" target="_blank" rel="noopener noreferrer">Solicitar orçamento</a></li>
       </ul>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero-content">
-      <h1>Incoart Ladrilhos</h1>
-      <p class="tagline">A arte em fazer ladrilhos</p>
-      <p class="hero-desc">Ladrilhos hidráulicos artesanais, cobogós, pisos para calçadas e artefatos de cimento com qualidade premium.</p>
-      <a href="index.html#contato" class="btn-primary">Solicitar Orçamento</a>
-    </div>
-  </section>
-
-  <!-- SOBRE -->
-  <section class="section sobre" id="sobre">
-    <div class="container">
-      <h2>Sobre a Incoart</h2>
-      <p>A Incoart Ladrilhos Hidráulicos nasceu com o propósito de unir tradição artesanal à qualidade moderna. Produzimos ladrilhos hidráulicos, cobogós, pisos para calçadas, piso podotátil e diversos artefatos de cimento com acabamento premium.</p>
-      <p>Localizada em Jacareí/SP, valorizamos cada detalhe para entregar peças que transformam ambientes com beleza, durabilidade e personalidade.</p>
-    </div>
-  </section>
-
-  <!-- CONTATO -->
-  <section class="section contato" id="contato">
-    <div class="container">
-      <h2>Fale Conosco</h2>
-      <p class="contato-endereco">
-        <strong>Endereço:</strong> Av. Maria Augusta Fagundes Gomes, 145 — Jacareí/SP
-      </p>
-
-      <form id="contactForm">
-        <div class="form-grid">
-          <input type="text" placeholder="Nome completo" required>
-          <input type="tel" id="celular" name="celular" placeholder="(11) 99999-9999" required>
-          <input type="email" placeholder="E-mail" required>
-          <textarea placeholder="Mensagem ou pedido de orçamento" rows="5" required></textarea>
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-pattern" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 class="visually-hidden">INCOART</h1>
+        <p class="hero-kicker">Ladrilho hidráulico · Artefatos de cimento</p>
+        <div class="hero-logo-mark">
+          <img src="src/images/logo-incoart.png" alt="Marca INCOART" width="220" height="88" decoding="async" />
         </div>
-        <button type="submit" class="btn-primary">Enviar Mensagem</button>
-      </form>
-    </div>
-  </section>
+        <p class="tagline">Artesanal, geométrico e com acabamento premium</p>
+        <p class="hero-desc">Tradição em cada peça: ladrilhos hidráulicos, cobogós, pisos para calçadas e soluções em cimento — com a precisão e a estética que seu projeto merece.</p>
+      </div>
+    </section>
+
+    <section class="section section--white section-pattern-light geo-reveal" id="institucional">
+      <div class="container container--narrow">
+        <h2>Institucional</h2>
+        <p class="lead">Transforme seus ambientes com a beleza e a resistência dos <strong>ladrilhos hidráulicos</strong> e dos <strong>artefatos de cimento</strong> da Incoart: produzimos peças com design artesanal, alta durabilidade e o charme que só o concreto pode oferecer — ideais para <strong>calçadas, fachadas, áreas externas</strong> e projetos decorativos.</p>
+        <p>A <strong>Incoart Artefatos de Cimento LTDA</strong> segue em Jacareí/SP com o propósito de continuar uma história de trabalho e construir um futuro sólido: em cada cliente, pedido e obra, investimos em aprendizado, dedicação e qualidade. Hoje fabricamos uma grande variedade de artefatos para obras, calçadas e áreas externas, entre eles: ladrilhos hidráulicos (incluindo aplicações em calçadas), blocos de cimento, elementos vazados e cobogós, piso podotátil de alerta e direcional, piso drenante, borda de piscina atérmica, guias e mini guias, pingadeiras, rodapés, molduras, pedras de jardim, canaletas e grelhas.</p>
+        <p>Cada peça entregue reforça nosso compromisso com <strong>qualidade, resistência e confiança</strong> — da matéria-prima ao acabamento, com atenção ao detalhe e ao DNA visual da marca.</p>
+      </div>
+    </section>
+
+    <section class="section section--bege geo-reveal" id="diferenciais">
+      <div class="container">
+        <h2>Por que INCOART</h2>
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"><span class="geo-square"></span></div>
+            <h3>Alta resistência</h3>
+            <p>Desempenho ao desgaste e à compressão para ambientes bonitos e duradouros.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"><span class="geo-diamond"></span></div>
+            <h3>Projeto sob medida</h3>
+            <p>Modelos e combinações que valorizam projetos autorais e layouts geométricos.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"><span class="geo-triangle"></span></div>
+            <h3>Uso versátil</h3>
+            <p>Opções para áreas sociais, externos, rampas e circulação — com segurança e estética.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true"><span class="geo-circle"></span></div>
+            <h3>Processo consciente</h3>
+            <p>Fabricação em cimento sem queima, alinhada a um perfil mais sustentável.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white geo-reveal" id="instalacao">
+      <div class="container two-col">
+        <div class="two-col__text">
+          <h2>Instalação e manutenção</h2>
+          <p>A performance do ladrilho hidráulico depende da base, do rejunte e da limpeza correta após a instalação. Orientamos sobre assentamento, dilatações e produtos adequados para conservar o brilho e a integridade das peças ao longo dos anos.</p>
+          <p>Em dúvidas sobre seu projeto, fale conosco: indicamos o melhor caminho para cada ambiente.</p>
+          <a href="https://wa.me/551239524244" class="btn-primary" target="_blank" rel="noopener noreferrer">Tirar suas dúvidas</a>
+        </div>
+        <div class="two-col__visual" aria-hidden="true">
+          <div class="tile-stack">
+            <div class="tile-stack__layer tile-stack__layer--1"></div>
+            <div class="tile-stack__layer tile-stack__layer--2"></div>
+            <div class="tile-stack__layer tile-stack__layer--3"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--bege geo-reveal" id="produtos-destaque">
+      <div class="container">
+        <h2>Produtos em destaque</h2>
+        <p class="section-intro">Três destaques da nossa linha: modelo tartaruga, ladrilho personalizado e pezão de cimento.</p>
+
+
+        <div class="product-cards">
+          <article class="product-card">
+            <div class="product-card__thumb">
+              <img src="src/images/produtos/ladrilhos_hidráulicos_modelo_tartaruga.webp" alt="" width="400" height="300" loading="lazy" />
+            </div>
+            <h3>Modelo tartaruga</h3>
+            <p>Clássico geométrico com forte presença visual em salas, cozinhas e áreas gourmet.</p>
+            <a href="produtos.html#ladrilho-tartaruga" class="link-arrow">Veja mais</a>
+          </article>
+          <article class="product-card">
+            <div class="product-card__thumb">
+              <img src="src/images/produtos/Ladrilho_hidraulico_personalizado.webp" alt="" width="400" height="300" loading="lazy" />
+            </div>
+            <h3>Ladrilho personalizado</h3>
+            <p>Desenvolvimento sob medida para o seu projeto, com a mesma qualidade artesanal.</p>
+            <a href="produtos.html#ladrilho-personalizado" class="link-arrow">Veja mais</a>
+          </article>
+          <article class="product-card">
+            <div class="product-card__thumb">
+              <img src="src/images/produtos/Pezao_de_Cimento.webp" alt="" width="400" height="300" loading="lazy" />
+            </div>
+            <h3>Pezão de cimento</h3>
+            <p>Artefato robusto para bases, apoios e soluções estruturais em obra.</p>
+            <a href="produtos.html#pezao-cimento" class="link-arrow">Veja mais</a>
+          </article>
+        </div>
+
+        <div class="catalog-cta">
+          <p>Outras linhas e peças da INCOART</p>
+          <a href="https://www.instagram.com/incoart2025/" class="btn-primary" target="_blank" rel="noopener noreferrer">Ver no Instagram</a>
+          <a href="produtos.html" class="catalog-cta__secondary">Catálogo completo</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--white geo-reveal" id="onde-encontrar">
+      <div class="container">
+        <h2>Onde encontrar</h2>
+        <p class="section-intro">Pontos de revenda parceiros — telefone, WhatsApp (quando houver) e localização no mapa.</p>
+        <div class="lojas-grid">
+          <article class="loja-card">
+            <h3>Douradão</h3>
+            <p class="loja-endereco">Av. Dom Pedro I, 481 — Parque dos Príncipes, Jacareí/SP</p>
+            <p class="loja-tel"><a href="tel:+551239617373">(12) 3961-7373</a></p>
+            <p class="loja-tel loja-tel--wa">
+              <a href="https://wa.me/5512988874834" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> WhatsApp (12) 98887-4834</a>
+            </p>
+            <div class="loja-actions loja-actions--solo">
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Dom+Pedro+I,+481,+Parque+dos+Pr%C3%ADncipes,+Jacare%C3%AD+-+SP" class="btn-outline btn-outline--sm" target="_blank" rel="noopener noreferrer">Abrir no mapa</a>
+            </div>
+          </article>
+          <article class="loja-card">
+            <h3>Depósito Nove de Julho</h3>
+            <p class="loja-endereco">Av. Nove de Julho, 265 — Centro, Jacareí/SP</p>
+            <p class="loja-tel"><a href="tel:+551239513933">(12) 3951-3933</a></p>
+            <div class="loja-actions loja-actions--solo">
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Av.+Nove+de+Julho,+265,+Centro,+Jacare%C3%AD+-+SP" class="btn-outline btn-outline--sm" target="_blank" rel="noopener noreferrer">Abrir no mapa</a>
+            </div>
+          </article>
+          <article class="loja-card">
+            <h3>Depósito Santa Luzia</h3>
+            <p class="loja-endereco">Santa Branca/SP</p>
+            <p class="loja-tel"><a href="tel:+5512996638760">(12) 99663-8760</a></p>
+            <div class="loja-actions loja-actions--solo">
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Dep%C3%B3sito+Santa+Luzia+Santa+Branca+SP" class="btn-outline btn-outline--sm" target="_blank" rel="noopener noreferrer">Abrir no mapa</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contato geo-reveal" id="contato">
+      <div class="container">
+        <h2>Contato</h2>
+        <p class="contato-lead contato-lead--center">Incoart Artefatos de Cimento — orçamentos e atendimento pelo WhatsApp.</p>
+
+        <div class="contato-endereco-bloco">
+          <h3 class="contato-subtitle">Endereço da fábrica</h3>
+          <address class="contato-address">
+            Av. Maria Augusta Fagundes Gomes, 145<br />
+            Residencial São Paulo — Jacareí/SP
+          </address>
+        </div>
+
+        <div class="contato-map-wrap">
+          <iframe
+            title="Localização Incoart — Jacareí"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Av.+Maria+Augusta+Fagundes+Gomes,+145,+Jacare%C3%AD+-+SP&amp;output=embed"
+          ></iframe>
+        </div>
+
+        <div class="contato-canais">
+          <a href="https://wa.me/551239524244" class="contato-canal contato-canal--wa contato-canal--stack" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+            <span class="contato-wa-num">(12) 3952-4244</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer class="footer">
-    <div class="container">
-      <p>© <span id="currentYear"></span> Incoart Ladrilhos Hidráulicos. Todos os direitos reservados.</p>
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <p class="footer-brand"><span class="logo-highlight">INCO</span>ART</p>
+        <p class="footer-tagline">Ladrilhos hidráulicos e artefatos de cimento</p>
+      </div>
+      <nav class="footer-center" aria-label="Rodapé">
+        <a href="#institucional">Institucional</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="#onde-encontrar">Onde encontrar</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://www.instagram.com/incoart2025/" target="_blank" rel="noopener noreferrer" aria-label="Instagram INCOART">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://wa.me/551239524244" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp INCOART">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© <span id="currentYear"></span> INCOART — Especialista em <strong>ladrilho hidráulico</strong> e <strong>artefatos de cimento</strong>.</p>
     </div>
   </footer>
 
-
-  <script src="src/javascript/script.js"></script>
-  <!-- Botão WhatsApp Flutuante -->
-<a href="https://wa.me/551239524244" target="_blank" class="whatsapp-float" aria-label="Falar no WhatsApp">
+  <a href="https://wa.me/551239524244" target="_blank" class="whatsapp-float" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
+
+  <script src="src/javascript/script.js"></script>
 </body>
 </html>
