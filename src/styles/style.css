@@ -11,7 +11,8 @@
   --branco: #FFFFFF;
   --sombra-soft: 0 12px 40px rgba(28, 28, 28, 0.08);
   --radius: 10px;
-  --header-h: 88px;
+  --header-h: 108px;
+  --logo-h: clamp(64px, 9vw, 88px);
 }
 
 * {
@@ -83,7 +84,7 @@ a:hover {
   width: 100%;
   z-index: 1000;
   box-shadow: 0 1px 0 rgba(28, 28, 28, 0.06);
-  padding: 14px 0;
+  padding: 10px 0;
   border-bottom: 1px solid rgba(28, 28, 28, 0.06);
 }
 
@@ -94,10 +95,16 @@ a:hover {
   gap: 16px;
 }
 
+.navbar-logo {
+  flex-shrink: 0;
+  line-height: 0;
+}
+
 .navbar-logo img {
-  height: clamp(52px, 8vw, 68px);
+  height: var(--logo-h);
   width: auto;
   display: block;
+  object-fit: contain;
 }
 
 .navbar-menu ul {
@@ -1267,21 +1274,248 @@ a:hover {
   color: var(--vermelho-escuro);
 }
 
-.tintas-embed-wrap {
-  max-width: 540px;
-  margin: 8px auto 0;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid rgba(28, 28, 28, 0.1);
+.produtos-ref__visual {
+  display: grid;
+  grid-template-columns: minmax(140px, 200px) 1fr;
+  gap: 20px;
+  align-items: start;
+  max-width: 520px;
+  margin: 0 auto 20px;
+  text-align: left;
+}
+
+.produtos-ref .produto-catalogo-item__cor-selecionada {
+  max-width: 520px;
+  margin: 0 auto 12px;
+  text-align: left;
+}
+
+.produtos-ref .btn-orcamento {
+  margin: 0 auto;
+}
+
+/* Catálogo de produtos (formato documentação) */
+.produtos-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.paleta-global {
+  background: var(--branco);
+  border: 1px solid rgba(28, 28, 28, 0.08);
+  border-radius: var(--radius);
+  padding: 24px;
   box-shadow: var(--sombra-soft);
+}
+
+.paleta-global h2 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.paleta-global__intro {
+  color: var(--cinza);
+  font-size: 0.94rem;
+  margin-bottom: 18px;
+}
+
+.paleta-cores {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.paleta-cores__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 4px;
+  border-radius: 10px;
+  transition: background 0.2s ease, transform 0.15s ease;
+  font: inherit;
+  color: inherit;
+}
+
+.paleta-cores__item:hover {
+  background: rgba(199, 58, 58, 0.08);
+}
+
+.paleta-cores__item:focus-visible {
+  outline: 2px solid var(--vermelho);
+  outline-offset: 2px;
+}
+
+.paleta-cores__item.is-selected {
+  background: rgba(199, 58, 58, 0.12);
+}
+
+.paleta-cores__item.is-selected .paleta-cores__swatch {
+  outline: 3px solid var(--vermelho);
+  outline-offset: 2px;
+}
+
+.paleta-cores__item.is-selected .paleta-cores__nome {
+  color: var(--vermelho);
+}
+
+.paleta-cores__swatch {
+  display: block;
+  width: 100%;
+  max-width: 72px;
+  aspect-ratio: 1.35;
+  border-radius: 8px;
+  border: 1px solid rgba(28, 28, 28, 0.12);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.25);
+}
+
+.paleta-cores__swatch--cinza { background: #9a9a9a; }
+.paleta-cores__swatch--branco { background: #f4f2ed; }
+.paleta-cores__swatch--preto { background: var(--preto); }
+.paleta-cores__swatch--amarelo { background: #f0c030; }
+.paleta-cores__swatch--azul { background: #2a5ea8; }
+.paleta-cores__swatch--vermelho { background: var(--vermelho); }
+
+.paleta-cores__nome {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--preto);
+}
+
+.paleta-cores--compact {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.paleta-cores--compact .paleta-cores__swatch {
+  max-width: 56px;
+}
+
+.paleta-cores--compact .paleta-cores__nome {
+  font-size: 0.65rem;
+}
+
+.produtos-catalogo {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.produto-catalogo-item {
+  background: var(--branco);
+  border: 1px solid rgba(28, 28, 28, 0.08);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--sombra-soft);
+  scroll-margin-top: calc(var(--header-h) + 16px);
+}
+
+.produto-catalogo-item h3 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: var(--preto);
+}
+
+.produto-catalogo-item__visual {
+  display: grid;
+  grid-template-columns: minmax(140px, 200px) 1fr;
+  gap: 20px;
+  align-items: start;
+  margin-bottom: 14px;
+}
+
+.produto-catalogo-item__imagem {
+  aspect-ratio: 1;
+  background: var(--bege);
+  border-radius: 8px;
+  border: 1px dashed rgba(28, 28, 28, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.produto-catalogo-item__imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
   background: var(--bege);
 }
 
-.tintas-embed-wrap iframe {
-  display: block;
-  width: 100%;
-  min-height: 560px;
-  border: 0;
+.produto-catalogo-item__cor-selecionada {
+  font-size: 0.88rem;
+  color: var(--cinza);
+  margin-bottom: 12px;
+}
+
+.produto-catalogo-item__cor-selecionada strong {
+  color: var(--preto);
+}
+
+.produto-catalogo-item__placeholder {
+  font-size: 0.82rem;
+  color: var(--cinza);
+  text-align: center;
+  padding: 12px;
+}
+
+.produto-catalogo-item__paleta {
+  background: rgba(232, 227, 220, 0.45);
+  border: 1px solid rgba(28, 28, 28, 0.08);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.produto-catalogo-item__paleta-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--cinza);
+  margin-bottom: 10px;
+}
+
+.produto-catalogo-item__specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+  margin-bottom: 16px;
+}
+
+.produto-catalogo-item__specs div {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.produto-catalogo-item__specs dt {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--cinza);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.produto-catalogo-item__specs dd {
+  font-size: 0.98rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.produto-catalogo-item .btn-orcamento {
+  width: fit-content;
 }
 
 /* Responsivo */
@@ -1346,8 +1580,21 @@ a:hover {
     gap: 18px;
   }
 
-  .tintas-embed-wrap iframe {
-    min-height: 480px;
+  .produtos-ref__visual {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+  }
+
+  .paleta-cores {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .produto-catalogo-item__visual {
+    grid-template-columns: 1fr;
+  }
+
+  .produto-catalogo-item__imagem {
+    max-width: 200px;
   }
 }
 

@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMobileMenu();
   initCurrentYear();
   initRevealOnScroll();
+  initPaletaSelecao();
 });
 
 function initSmoothScroll() {
@@ -75,4 +76,73 @@ function initRevealOnScroll() {
   );
 
   blocks.forEach((el) => observer.observe(el));
+}
+
+const WHATSAPP_BASE = "https://wa.me/551239524244?text=";
+
+function buildOrcamentoMessage(produto, cor) {
+  let message = `Olá! Gostaria de solicitar orçamento de: ${produto}.`;
+  if (cor) {
+    message += ` Cor selecionada: ${cor}.`;
+  }
+  return message;
+}
+
+function initPaletaSelecao() {
+  const blocks = document.querySelectorAll(".produto-catalogo-item, .produtos-ref[data-produto]");
+
+  blocks.forEach((block) => {
+    const produto =
+      block.dataset.produto || block.querySelector("h2, h3")?.textContent.trim();
+    const palette = block.querySelector(".paleta-cores");
+    const btn = block.querySelector(".btn-orcamento");
+
+    if (!produto || !palette || !btn) return;
+
+    let selectedCor = "";
+
+    const status = document.createElement("p");
+    status.className = "produto-catalogo-item__cor-selecionada";
+    status.hidden = true;
+    status.innerHTML = 'Cor selecionada: <strong></strong>';
+    btn.before(status);
+
+    const strong = status.querySelector("strong");
+
+    function updateSelection(item, cor) {
+      palette.querySelectorAll(".paleta-cores__item").forEach((entry) => {
+        entry.classList.remove("is-selected");
+        entry.setAttribute("aria-pressed", "false");
+      });
+
+      item.classList.add("is-selected");
+      item.setAttribute("aria-pressed", "true");
+      selectedCor = cor;
+      strong.textContent = cor;
+      status.hidden = false;
+      btn.href =
+        WHATSAPP_BASE + encodeURIComponent(buildOrcamentoMessage(produto, cor));
+    }
+
+    palette.querySelectorAll(".paleta-cores__item").forEach((item) => {
+      const cor = item.querySelector(".paleta-cores__nome")?.textContent.trim();
+      if (!cor) return;
+
+      item.setAttribute("role", "button");
+      item.setAttribute("tabindex", "0");
+      item.setAttribute("aria-pressed", "false");
+      item.setAttribute("aria-label", `Selecionar cor ${cor}`);
+
+      item.addEventListener("click", () => updateSelection(item, cor));
+      item.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          updateSelection(item, cor);
+        }
+      });
+    });
+
+    btn.href =
+      WHATSAPP_BASE + encodeURIComponent(buildOrcamentoMessage(produto, ""));
+  });
 }
