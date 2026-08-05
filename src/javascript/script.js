@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initCurrentYear();
   initRevealOnScroll();
   initPaletaSelecao();
+  initFiltroBusca();
+  initVoltarTopo();
 });
 
 function initSmoothScroll() {
@@ -86,6 +88,123 @@ function buildOrcamentoMessage(produto, cor) {
     message += ` Cor selecionada: ${cor}.`;
   }
   return message;
+}
+
+function normalizarTexto(texto) {
+  return texto
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "");
+}
+
+function irParaProduto(id) {
+  const alvo = document.getElementById(id);
+  if (!alvo) return;
+
+  alvo.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  alvo.classList.remove("is-destacado");
+  void alvo.offsetWidth; // reinicia a animação se o mesmo produto for clicado de novo
+  alvo.classList.add("is-destacado");
+  alvo.addEventListener(
+    "animationend",
+    () => alvo.classList.remove("is-destacado"),
+    { once: true }
+  );
+
+  history.replaceState(null, "", "#" + id);
+}
+
+function initFiltroBusca() {
+  const input = document.getElementById("filtroBusca");
+  const wrap = document.getElementById("filtroBuscaWrap");
+  const limparBtn = document.getElementById("filtroBuscaLimpar");
+  const vazioMsg = document.getElementById("filtroBuscaVazio");
+  const grupos = document.querySelectorAll(".filtro-lateral .filtro-grupo");
+
+  if (!input || !grupos.length) return;
+
+  function aplicarFiltro() {
+    const termo = normalizarTexto(input.value.trim());
+    wrap?.classList.toggle("tem-texto", termo.length > 0);
+
+    let algumGrupoVisivel = false;
+    let ultimoGrupoVisivel = null;
+
+    grupos.forEach((grupo) => {
+      const itens = grupo.querySelectorAll(".filtro-lista li");
+      let algumItemVisivel = false;
+
+      itens.forEach((item) => {
+        const texto = normalizarTexto(item.textContent);
+        const combina = termo === "" || texto.includes(termo);
+        item.classList.toggle("is-oculto", !combina);
+        if (combina) algumItemVisivel = true;
+      });
+
+      grupo.classList.remove("is-ultimo-visivel");
+      grupo.classList.toggle("is-oculto", !algumItemVisivel);
+      if (algumItemVisivel) {
+        algumGrupoVisivel = true;
+        ultimoGrupoVisivel = grupo;
+      }
+    });
+
+    ultimoGrupoVisivel?.classList.add("is-ultimo-visivel");
+
+    if (vazioMsg) {
+      vazioMsg.classList.toggle("is-visivel", termo.length > 0 && !algumGrupoVisivel);
+    }
+  }
+
+  input.addEventListener("input", aplicarFiltro);
+
+  input.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter") return;
+    const visiveis = Array.from(
+      document.querySelectorAll(".filtro-lateral .filtro-lista li:not(.is-oculto) a")
+    );
+    if (visiveis.length === 1) {
+      event.preventDefault();
+      const id = visiveis[0].getAttribute("href")?.replace("#", "");
+      if (id) irParaProduto(id);
+    }
+  });
+
+  limparBtn?.addEventListener("click", () => {
+    input.value = "";
+    aplicarFiltro();
+    input.focus();
+  });
+
+  document.querySelectorAll(".filtro-lateral .filtro-lista a").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      const id = link.getAttribute("href")?.replace("#", "");
+      if (!id) return;
+      event.preventDefault();
+      irParaProduto(id);
+    });
+  });
+
+  aplicarFiltro();
+}
+
+function initVoltarTopo() {
+  const btn = document.getElementById("voltarTopo");
+  if (!btn) return;
+
+  const LIMIAR = 400;
+
+  function atualizarVisibilidade() {
+    btn.classList.toggle("is-visivel", window.scrollY > LIMIAR);
+  }
+
+  window.addEventListener("scroll", atualizarVisibilidade, { passive: true });
+  atualizarVisibilidade();
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
 }
 
 function initPaletaSelecao() {

@@ -3,8 +3,8 @@ name: Deploy para Locaweb via FTP
 on:
   push:
     branches:
-      - main  
-  workflow_dispatch:  
+      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -13,12 +13,28 @@ jobs:
 
     steps:
       - name: Checkout código
-        uses: actions/checkout@v4 
+        uses: actions/checkout@v4
+
+      # A action locaweb/ftp-deploy não tem parâmetro de "exclude": ela envia
+      # tudo que estiver em localDir. Sem esse passo, o remoteDir recebe o
+      # repositório inteiro (.github/, este main.yml, README, etc.).
+      # Aqui montamos uma pasta "public" só com o que deve ficar acessível
+      # no servidor, e apontamos o deploy só para ela.
+      - name: Preparar pasta pública (somente arquivos do site)
+        run: |
+          mkdir -p public
+          cp index.html produtos.html public/
+          cp .htaccess public/.htaccess
+          cp -r src public/src
+          # Se existir favicon.ico, robots.txt, sitemap.xml etc. na raiz,
+          # adicione aqui: cp favicon.ico robots.txt public/ 2>/dev/null || true
+
       - name: Deploy via FTP (Locaweb)
         uses: locaweb/ftp-deploy@1.0.0
         with:
           host: ${{ secrets.FTP_SERVER }}
           user: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          localDir: public
           remoteDir: public_html
-  
+          

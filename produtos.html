@@ -57,8 +57,18 @@
       </div>
 
       <div class="produtos-content">
-        <aside class="filtro-lateral" aria-label="Filtro de produtos">
-          <h3>Filtro de Produtos</h3>
+        <aside class="filtro-lateral" aria-label="Encontrar produto">
+          <h3>Encontrar produto</h3>
+
+          <div class="filtro-busca-wrap" id="filtroBuscaWrap">
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <input type="search" id="filtroBusca" class="filtro-busca" placeholder="Digite o nome do produto..." aria-label="Buscar produto" autocomplete="off">
+            <button type="button" class="filtro-busca-limpar" id="filtroBuscaLimpar" aria-label="Limpar busca">
+              <i class="fas fa-times" aria-hidden="true"></i>
+            </button>
+          </div>
+          <p class="filtro-busca-vazio" id="filtroBuscaVazio">Nenhum produto encontrado.</p>
+
           <div class="filtro-grupo">
             <h4>Ladrilhos Dados</h4>
             <ul class="filtro-lista">
@@ -690,6 +700,10 @@
   <a href="https://wa.me/551239524244" target="_blank" class="whatsapp-float" rel="noopener noreferrer" aria-label="Falar no WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
+
+  <button type="button" class="voltar-topo" id="voltarTopo" aria-label="Voltar ao topo">
+    <i class="fas fa-arrow-up" aria-hidden="true"></i>
+  </button>
 
   <script src="src/javascript/script.js"></script>
 </body>

@@ -1,0 +1,38 @@
+# =============================================
+# INCOART — .gitignore
+# =============================================
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores / IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+*.swp
+
+# Dependências (caso algum dia entre alguma ferramenta de build/lint com Node)
+node_modules/
+package-lock.json
+
+# Variáveis de ambiente e segredos — NUNCA versionar
+.env
+.env.*
+*.pem
+*.key
+
+# Logs
+*.log
+npm-debug.log*
+
+# Backups e arquivos temporários de edição
+*.bak
+*.old
+*.tmp
+*~
+
+# Arquivos de deploy que não devem ir para o Git
+/public_html/
+/dist/
