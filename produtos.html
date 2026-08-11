@@ -56,67 +56,26 @@
         <p class="page-subtitle">Linha completa de pisos e acessórios em cimento — padrões, dimensões e paleta de cores conforme catálogo INCOART.</p>
       </div>
 
-      <div class="produtos-content">
-        <aside class="filtro-lateral" aria-label="Encontrar produto">
-          <h3>Encontrar produto</h3>
+      <div class="produtos-busca-topo">
+        <div class="produtos-busca-wrap" id="produtosBuscaWrap">
+          <i class="fas fa-search" aria-hidden="true"></i>
+          <input type="search" id="produtosBusca" class="produtos-busca" placeholder="Buscar por nome do produto..." aria-label="Buscar produto" autocomplete="off">
+        </div>
+      </div>
 
-          <div class="filtro-busca-wrap" id="filtroBuscaWrap">
-            <i class="fas fa-search" aria-hidden="true"></i>
-            <input type="search" id="filtroBusca" class="filtro-busca" placeholder="Digite o nome do produto..." aria-label="Buscar produto" autocomplete="off">
-            <button type="button" class="filtro-busca-limpar" id="filtroBuscaLimpar" aria-label="Limpar busca">
-              <i class="fas fa-times" aria-hidden="true"></i>
-            </button>
-          </div>
-          <p class="filtro-busca-vazio" id="filtroBuscaVazio">Nenhum produto encontrado.</p>
+      <div class="produtos-categorias" id="produtosCategorias" role="group" aria-label="Filtrar por categoria">
+        <button type="button" class="categoria-chip is-ativo" data-categoria="todos">Todos</button>
+        <button type="button" class="categoria-chip" data-categoria="ladrilhos-dados">Ladrilhos Dados</button>
+        <button type="button" class="categoria-chip" data-categoria="padroes">Padrões</button>
+        <button type="button" class="categoria-chip" data-categoria="piso-tatil">Piso tático</button>
+        <button type="button" class="categoria-chip" data-categoria="acessorios">Acessórios</button>
+      </div>
 
-          <div class="filtro-grupo">
-            <h4>Ladrilhos Dados</h4>
-            <ul class="filtro-lista">
-              <li><a href="#9-dados">9 Dados</a></li>
-              <li><a href="#16-dados">16 Dados</a></li>
-              <li><a href="#25-dados">25 Dados</a></li>
-              <li><a href="#36-dados">36 Dados</a></li>
-              <li><a href="#64-dados">64 Dados</a></li>
-            </ul>
-          </div>
-          <div class="filtro-grupo">
-            <h4>Padrões</h4>
-            <ul class="filtro-lista">
-              <li><a href="#copacabana">Copacabana</a></li>
-              <li><a href="#meia-cara">Meia Cara</a></li>
-              <li><a href="#tranca-ponta-preta">Trança / Corrente Ponta Preta</a></li>
-              <li><a href="#tranca-cacapava">Trança / Corrente / Caçapava</a></li>
-              <li><a href="#dama-sjc">Dama / São José dos Campos</a></li>
-              <li><a href="#padrao-santo-andre">Padrão Santo André</a></li>
-              <li><a href="#25-dados-bola-mogi">25 Dados Bola / Mogi</a></li>
-              <li><a href="#ladrilho-tartaruga">Tartaruga</a></li>
-            </ul>
-          </div>
-          <div class="filtro-grupo">
-            <h4>Piso tático</h4>
-            <ul class="filtro-lista">
-              <li><a href="#podotatil-alerta-20">Podotátil Alerta 20×20</a></li>
-              <li><a href="#podotatil-direcional-20">Podotátil Direcional 20×20</a></li>
-              <li><a href="#podotatil-alerta-25">Podotátil Alerta 25×25</a></li>
-              <li><a href="#podotatil-direcional-25">Podotátil Direcional 25×25</a></li>
-            </ul>
-          </div>
-          <div class="filtro-grupo">
-            <h4>Acessórios</h4>
-            <ul class="filtro-lista">
-              <li><a href="#rampa">Rampa</a></li>
-              <li><a href="#rampinha">Rampinha</a></li>
-              <li><a href="#firenze">Firenze</a></li>
-              <li><a href="#milano">Milano</a></li>
-              <li><a href="#ref-tintas">Tintas e acabamento</a></li>
-            </ul>
-          </div>
-        </aside>
+      <p class="produtos-busca-vazio" id="produtosBuscaVazio">Nenhum produto encontrado. Tente outro termo ou categoria.</p>
 
-        <div class="produtos-main">
-          <div class="produtos-catalogo">
+      <div class="produtos-catalogo" id="produtosCatalogo">
 
-            <article class="produto-catalogo-item geo-reveal" id="9-dados">
+            <article class="produto-catalogo-item geo-reveal" id="9-dados" data-nome="9 Dados" data-categoria="ladrilhos-dados">
               <h3>9 Dados</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -141,7 +100,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%209%20Dados." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="16-dados">
+            <article class="produto-catalogo-item geo-reveal" id="16-dados" data-nome="16 Dados" data-categoria="ladrilhos-dados">
               <h3>16 Dados</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -166,7 +125,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%2016%20Dados." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="25-dados">
+            <article class="produto-catalogo-item geo-reveal" id="25-dados" data-nome="25 Dados" data-categoria="ladrilhos-dados">
               <h3>25 Dados</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -191,7 +150,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%2025%20Dados." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="36-dados">
+            <article class="produto-catalogo-item geo-reveal" id="36-dados" data-nome="36 Dados" data-categoria="ladrilhos-dados">
               <h3>36 Dados</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -216,7 +175,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%2036%20Dados." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="64-dados">
+            <article class="produto-catalogo-item geo-reveal" id="64-dados" data-nome="64 Dados" data-categoria="ladrilhos-dados">
               <h3>64 Dados</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -241,7 +200,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%2064%20Dados." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="copacabana">
+            <article class="produto-catalogo-item geo-reveal" id="copacabana" data-nome="Copacabana" data-categoria="padroes">
               <h3>Copacabana</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -266,7 +225,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Copacabana." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="meia-cara">
+            <article class="produto-catalogo-item geo-reveal" id="meia-cara" data-nome="Meia Cara" data-categoria="padroes">
               <h3>Meia Cara</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -291,7 +250,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Meia%20Cara." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="tranca-ponta-preta">
+            <article class="produto-catalogo-item geo-reveal" id="tranca-ponta-preta" data-nome="Trança Ponta Preta / Corrente Ponta Preta" data-categoria="padroes">
               <h3>Trança Ponta Preta / Corrente Ponta Preta</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -316,7 +275,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Tranca%20Ponta%20Preta%20%2F%20Corrente%20Ponta%20Preta." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="tranca-cacapava">
+            <article class="produto-catalogo-item geo-reveal" id="tranca-cacapava" data-nome="Trança / Corrente / Padrão Caçapava – Taubaté" data-categoria="padroes">
               <h3>Trança / Corrente / Padrão Caçapava – Taubaté</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -341,7 +300,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Tranca%20%2F%20Corrente%20%2F%20Padrao%20Cacapava." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="dama-sjc">
+            <article class="produto-catalogo-item geo-reveal" id="dama-sjc" data-nome="Dama / Padrão São José dos Campos" data-categoria="padroes">
               <h3>Dama / Padrão São José dos Campos</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -366,7 +325,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Dama%20%2F%20Padrao%20Sao%20Jose%20dos%20Campos." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="padrao-santo-andre">
+            <article class="produto-catalogo-item geo-reveal" id="padrao-santo-andre" data-nome="Padrão Santo André" data-categoria="padroes">
               <h3>Padrão Santo André</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -391,7 +350,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Padrao%20Santo%20Andre." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="25-dados-bola-mogi">
+            <article class="produto-catalogo-item geo-reveal" id="25-dados-bola-mogi" data-nome="25 Dados Bola Branca / Padrão Mogi" data-categoria="padroes">
               <h3>25 Dados Bola Branca / Padrão Mogi</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -416,7 +375,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%2025%20Dados%20Bola%20Branca%20%2F%20Padrao%20Mogi." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="ladrilho-tartaruga">
+            <article class="produto-catalogo-item geo-reveal" id="ladrilho-tartaruga" data-nome="Tartaruga" data-categoria="padroes">
               <h3>Tartaruga</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -441,7 +400,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Tartaruga." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="podotatil-alerta-20">
+            <article class="produto-catalogo-item geo-reveal" id="podotatil-alerta-20" data-nome="Piso Tátil / Podotátil Alerta" data-categoria="piso-tatil">
               <h3>Piso Tátil / Podotátil Alerta</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -466,7 +425,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Piso%20Tatil%20Alerta%2020x20." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="podotatil-direcional-20">
+            <article class="produto-catalogo-item geo-reveal" id="podotatil-direcional-20" data-nome="Piso Tátil / Podotátil Direcional" data-categoria="piso-tatil">
               <h3>Piso Tátil / Podotátil Direcional</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -491,7 +450,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Piso%20Tatil%20Direcional%2020x20." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="podotatil-alerta-25">
+            <article class="produto-catalogo-item geo-reveal" id="podotatil-alerta-25" data-nome="Piso Tátil / Podotátil Alerta" data-categoria="piso-tatil">
               <h3>Piso Tátil / Podotátil Alerta</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -516,7 +475,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Piso%20Tatil%20Alerta%2025x25." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="podotatil-direcional-25">
+            <article class="produto-catalogo-item geo-reveal" id="podotatil-direcional-25" data-nome="Piso Tátil / Podotátil Direcional" data-categoria="piso-tatil">
               <h3>Piso Tátil / Podotátil Direcional</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -541,7 +500,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Piso%20Tatil%20Direcional%2025x25." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="rampa">
+            <article class="produto-catalogo-item geo-reveal" id="rampa" data-nome="Rampa" data-categoria="acessorios">
               <h3>Rampa</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -566,7 +525,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Rampa." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="rampinha">
+            <article class="produto-catalogo-item geo-reveal" id="rampinha" data-nome="Rampinha" data-categoria="acessorios">
               <h3>Rampinha</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -591,7 +550,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Rampinha." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="firenze">
+            <article class="produto-catalogo-item geo-reveal" id="firenze" data-nome="Firenze" data-categoria="acessorios">
               <h3>Firenze</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -616,7 +575,7 @@
               <a href="https://wa.me/551239524244?text=Ol%C3%A1%21%20Gostaria%20de%20solicitar%20or%C3%A7amento%20de%3A%20Firenze." class="btn-orcamento" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> Solicitar orçamento</a>
             </article>
 
-            <article class="produto-catalogo-item geo-reveal" id="milano">
+            <article class="produto-catalogo-item geo-reveal" id="milano" data-nome="Milano" data-categoria="acessorios">
               <h3>Milano</h3>
               <div class="produto-catalogo-item__visual">
                 <div class="produto-catalogo-item__imagem">
@@ -642,10 +601,8 @@
             </article>
 
           </div>
-        </div>
-      </div>
 
-      <div class="produtos-ref geo-reveal" id="ref-tintas" data-produto="Tinta de demarcação viária">
+      <div class="produtos-ref geo-reveal" id="ref-tintas" data-produto="Tinta de demarcação viária" data-nome="Tintas e acabamento" data-categoria="acessorios">
         <h2>Tintas e acabamento</h2>
         <p>Na Incoart você encontra <strong>tinta de demarcação viária</strong> com alta cobertura, secagem rápida e resistência ao tempo e ao tráfego — ideal para pátios, estacionamentos, calçadas, fábricas e áreas externas, com sinalização nítida e mais segurança.</p>
         <div class="produtos-ref__visual">
