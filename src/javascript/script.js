@@ -133,8 +133,12 @@ function initProdutosFiltro() {
 
   chips.forEach((chip) => {
     chip.addEventListener("click", () => {
-      chips.forEach((c) => c.classList.remove("is-ativo"));
+      chips.forEach((c) => {
+        c.classList.remove("is-ativo");
+        c.setAttribute("aria-pressed", "false");
+      });
       chip.classList.add("is-ativo");
+      chip.setAttribute("aria-pressed", "true");
       categoriaAtiva = chip.dataset.categoria || "todos";
       aplicarFiltro();
     });
