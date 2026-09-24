@@ -223,3 +223,4 @@ function initPaletaSelecao() {
       WHATSAPP_BASE + encodeURIComponent(buildOrcamentoMessage(produto, ""));
   });
 }
+
